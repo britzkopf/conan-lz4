@@ -61,8 +61,8 @@ class LZ4Conan(ConanFile):
             sln_path = os.path.join(os.getcwd(), 'lz4.sln')
             print("sln_path")
             print(sln_path)
-            command = tools.build_sln_command(self.settings, sln_path, targets=[target])
-            print(command)
+            command = tools.msvc_build_command(self.settings, sln_path, targets=[target])
+
             if self.settings.arch == 'x86':
                 command = command.replace('/p:Platform="x86"', '/p:Platform="Win32"')
             self.run(command)
