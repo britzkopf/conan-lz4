@@ -8,7 +8,7 @@ environment:
     matrix:
         #- MINGW_CONFIGURATIONS: '4.9@x86_64@seh@posix, 4.9@x86_64@sjlj@posix, 4.9@x86@sjlj@posix, 4.9@x86@dwarf2@posix, 6.3@x86_64@seh@posix, 7.1@x86_64@seh@posix'
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-          CONAN_VISUAL_VERSIONS: 12
+          CONAN_VISUAL_VERSIONS: 14
           CONAN_BUILD_TYPES: Release
        
 #before_test:
@@ -22,6 +22,6 @@ install:
 test_script:
   - python build.py
 
-on_finish:
+#on_finish:
   
- - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+ #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
